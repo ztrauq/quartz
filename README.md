@@ -4,11 +4,9 @@ __quartz__ is an internal project of Market Evaluator.
 
 It sets out the guiding principles for development of Market Evaluator products in [MeteorJS](https://github.com/meteor/meteor).
 
-## Motives
-
-To
-
-## 1. stateful
+__quartz__ is motivated by the need to ensure consistency of approach in development.                                       
+                                                                             
+## 1. stateful               To ensu
 
 ### The `UI` is __stateful__
  
