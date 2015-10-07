@@ -32,8 +32,17 @@ For example, here is flow of of a toggle button that shows or hides an element i
 | Action        | Dispatch           | Store  | View |
 | ------------- |:-------------| -----| ---|
 | User clicks the toggle button and the event handler notifies the Dispatcher the user wants to change the state of the element      | The Dispatcher checks a register of Actions to find which Store handles this action | The Store changes of the state of the element | The View reacts to the state change and renders element |
-| toggle state   | dispatch      | set isVisible to its opposite | show or hide element _and_ change the icon of toggle button |
+| toggle state   | dispatch      | set isVisible to its opposite | show or hide element using CSS |
 
-This is a double-loop.
+We can pass more than one state change in one Action. For example, if the element has a CSS3 transition on its changing state, toggling the state of `isTransitioning`, which could change the `disabled` property of the element.
 
+| Action        | Dispatch           | Store  | View |                                                                                       
+| ------------- |:-------------| -----| ---|                                                  
+| toggle state   | dispatch      | set isVisible and isTransitioning to its opposite | show or hide element using CSS _and_ change the disabled property of the toggle button |
 
+A change in the view can trigger a new action. so an event handler for `transitionend` can start a new Action which Dispatched to the Store effection ,
+
+| Action        | Dispatch           | Store  | View |                                                                                       
+| ------------- |:-------------| -----| ---|  
+| toggle state   | dispatch      | set isVisible and isTransitioning to its opposite | show or hide element using CSS _and_ change the disabled property of the toggle button |
+| transitionend   | dispatch      | set i isTransitioning to its opposite | hange the disabled property of the toggle button |
