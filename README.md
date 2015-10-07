@@ -29,7 +29,7 @@ For example, here is flow of of a toggle button that shows or hides an element i
 
 | Action        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
+| User Clicks the toggle button and the event handler tells the Dispatcher the user is initiated Action to toggle the state of the element      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
   
