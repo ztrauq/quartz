@@ -21,7 +21,7 @@ it is assumed that __Quartz__ projects are conceived as human computer interface
  
 The __stateful__ approach to UI development is declarative, describing the state of the UI. Changes to the state of the UI are reflexive of user interaction and reflects _what the user wanted to do_. It is useful to contrast this with the imperative paradigm which describes _how to do something_. In the declarative paradigm, a change of state is followed by programmatic action. In the imperative paradigm, programmatic action results in a change of state.
                                                                    
-For example, imagine a simple electric circuit with a switch, light and battery. When you press the switch on a light you change the state of the circuit. If the light is off, it's because the state of circuit is open. Pressing the switch closes the circuit and illuminates the lamp . _Pressing the switch is declarative: __I want the light on__._
+For example, imagine a simple electric circuit with a switch, light and battery. When you press the switch on a light you change the state of the circuit. If the light is off, it's because the state of circuit is open. Pressing the switch closes the circuit and illuminates the lamp . _Pressing the switch is declarative: **I want the light on**._
 ![Simple Circuit Diagram](http://img.bhs4.com/b9/c/b9c711ef8757216dbfdacce003ab2a21133e502d_large.jpg)
 
 In the declarative paradigm of __Quartz__, the state of the UI is measure of the user's interaction with the programme. The state of the UI is a delta, reflecting the previous state plus any changes to the state from the last interaction. And the change in state initiates programmatic action.  
