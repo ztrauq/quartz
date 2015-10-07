@@ -24,19 +24,16 @@ The __stateful__ approach to UI development is declarative, describing the state
 In the declarative paradigm of __Quartz__, the state of the UI is measure of the user's interaction with the programme. The state of the UI is a delta, reflecting the previous state plus any changes to the state from the last interaction. And the change in state initiates programmatic action.  
 
 The flow of the programme follows a change in its state. It is uni-direction. To handle this, we are deploying Facebook's Flux paradigm. In Flux, an action initiates a change in state. The action is dispatched to function of the programme, which is maintained in a store. The store is the sole delegated change the state, A change in state is then reflected in teh view.
+
+[Flux's unidirectional flow](https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png = 800x)
  
-For example, here is flow of of a toggle button that shows or hides an element in the UI.
+For example, here is flow of of a toggle button that shows or hides an element in the UI. The state is held in a property `isVisible` of the element's state
 
 | Action        | Dispatch           | Store  | View |
 | ------------- |:-------------| -----| ---|
 | User clicks the toggle button and the event handler notifies the Dispatcher the user wants to change the state of the element      | The Dispatcher checks a register of Actions to find which Store handles this action | The Store changes of the state of the element | The View reacts to the state change and renders element |
-| toggle state   | dispatch      | set isVisible to opposite | show or hide element |
-| zebra stripes | are neat      |    $1 | OK |
-  
- | Action | Dispatch | Store | View |
- | ------ | -------- | ----- | ---- |
- | User Clicks the toggle button and the event handler tells the Dispatcher the user is initiated Action to toggle the state of the element | The Dispatcher checks a register of Actions to find which Store handles this action| The Store changes of the `isVisible` state of the elemnt | The View sees the state has changed, and reflects this, changing both the toggle button and the el. |
-  
-  This is a double-loop.
+| toggle state   | dispatch      | set isVisible to its opposite | show or hide element _and_ change the icon of toggle button |
+
+This is a double-loop.
 
 
