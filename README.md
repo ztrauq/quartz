@@ -29,8 +29,8 @@ For example, here is flow of of a toggle button that shows or hides an element i
 
 | Action        | Dispatch           | Store  | View |
 | ------------- |:-------------| -----| ---|
-| User Clicks the toggle button and the event handler notifies the Dispatcher the user wants to change the state of the element      | The Dispatcher checks a register of Actions to find which Store handles this action | The Store changes of the `isVisible` state of the elemnt | OK |
-| what 2 is      | centered      |   $12 | not OK |
+| User clicks the toggle button and the event handler notifies the Dispatcher the user wants to change the state of the element      | The Dispatcher checks a register of Actions to find which Store handles this action | The Store changes of the state of the element | The View reacts to the state change and renders element |
+| toggle state   | dispatch      | set isVisible to opposite | show or hide element |
 | zebra stripes | are neat      |    $1 | OK |
   
  | Action | Dispatch | Store | View |
