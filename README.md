@@ -27,11 +27,11 @@ The flow of the programme follows a change in its state. It is uni-direction. To
  
 For example, here is flow of of a toggle button that shows or hides an element in the UI.
 
-| Action        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| User Clicks the toggle button and the event handler tells the Dispatcher the user is initiated Action to toggle the state of the element      | right-aligned | $1600 |
-| what 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Action        | Dispatch           | Store  | View |
+| ------------- |:-------------:| -----:| ---|
+| User Clicks the toggle button and the event handler tells the Dispatcher the user is initiated Action to toggle the state of the element      | right-aligned | $1600 | OK |
+| what 2 is      | centered      |   $12 | not OK |
+| zebra stripes | are neat      |    $1 | OK |
   
  | Action | Dispatch | Store | View |
  | ------ | -------- | ----- | ---- |
