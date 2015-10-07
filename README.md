@@ -26,6 +26,12 @@ In the declarative paradigm of __Quartz__, the state of the UI is measure of the
 The flow of the programme follows a change in its state. It is uni-direction. To handle this, we are deploying Facebook's Flux paradigm. In Flux, an action initiates a change in state. The action is dispatched to function of the programme, which is maintained in a store. The store is the sole delegated change the state, A change in state is then reflected in teh view.
  
 For example, here is flow of of a toggle button that shows or hides an element in the UI.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
   
   | Action | Dispatch | Store | View |
   |--------|----------|-------|------|
