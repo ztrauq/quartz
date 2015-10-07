@@ -40,7 +40,7 @@ We can pass more than one state change in one Action. For example, if the elemen
 | ------------- |:-------------| -----| ---|                                                  
 | toggle state   | dispatch      | set isVisible and isTransitioning to its opposite | show or hide element using CSS _and_ change the disabled property of the toggle button |
 
-A change in the view can trigger a new action. so an event handler for `transitionend` can start a new Action which Dispatched to the Store effection ,
+A change in the view can trigger a new action. so an event handler for `transitionend` can start a new Action which is Dispatched to the Store effecting the Viw, so with effective state-management one user Action can cascade a series of state changes, leading to update of the view. 
 
 | Action        | Dispatch           | Store  | View |                                                                                       
 | ------------- |:-------------| -----| ---|  
