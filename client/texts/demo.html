@@ -1,0 +1,21 @@
+<template name="demoContent">
+    <div class="ui secondary segment">
+        <p>To demonstrate flux,  the diagram on the right - of a simple circuit with a switch, battery and lamp - is used as an analog for declarative, stateful thinking. </p>
+        <p>And the remaining sections of this document show how Flux is mapped to Meteor in this pattern.</p>
+    </div>
+    <div class="ui segment basic">
+        {{> demoText}}
+    </div>
+</template>
+
+<template name="demoText">
+    {{#markdown}}
+
+When the light is off, the state of the circuit is `open`. For the light to come on the circuit must be `closed`. The switch toggles between these two states.
+
+Pressing the switch is a declarative action. It declares you want the light on/off, depending on its current state. But you are not setting the state of light, but of the circuit. As long as the light element is working, it is the state of the circuit that matters.
+
+
+
+    {{/markdown}}
+</template>

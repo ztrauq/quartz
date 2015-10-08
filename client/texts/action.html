@@ -1,0 +1,24 @@
+<template name="actionContent">
+
+    <div class="ui segment basic">
+        {{> actionText}}
+    </div>
+</template>
+
+<template name="actionText">
+    {{#markdown}}
+
+When a user click the 'switch' the Action creator dispatches a payload with the actionType
+
+```js
+/* ACTION */
+    Template.circuit.events({
+        'click #switch' : function () {
+            let payload = {};
+            payload.actionType = CIRCUIT_TOGGLE;
+            Dispatcher.dispatch(payload);
+        }
+    });
+```
+    {{/markdown}}
+</template>

@@ -1,0 +1,31 @@
+<template name="viewContent">
+
+    <div class="ui segment basic">
+        {{> viewText}}
+    </div>
+</template>
+
+<template name="viewText">
+    {{#markdown}}
+
+The view is the template .helper, which is tracking the stores getState() function
+```js
+/* VIEW */
+    Template.circuit.helpers({
+        circuit: function () {
+            return STORES[STORE].getState();
+        }
+    });
+
+```
+note: in the next section I can't show 2 curly braces together, something with my markdown, so I show the opening braces {.{ - the dot should not be there!!
+
+And then `spacebars` is used to control the template layout using `{.{if circuit.closed}}` to show/hide elements and set some class names. Also the `aim` property is used in status text
+
+```html
+        <h2 class="ui header">{.{circuit.meta}}</h2>
+```
+
+
+    {{/markdown}}
+</template>

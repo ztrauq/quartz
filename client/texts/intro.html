@@ -1,0 +1,27 @@
+<template name="introContent">
+    <div class="ui secondary segment">
+        <p>Flux is the application architecture that Facebook uses for building client-side web applications. </p>
+        <a href="https://facebook.github.io/flux/docs/overview.html"><i class="icon linkify"></i>Flux Overview</a>
+    </div>
+    <div class="ui segment basic">
+        {{> introText}}
+    </div>
+</template>
+
+<template name="introText">
+    {{#markdown}}
+        
+Flux is uni-directional pattern that has been designed for reactive web development. Although it was released alongside React, it is not really a thing in itself but a approach to coding. 
+        
+This demo was developed to apply the methods of flux, maintaining the uni-directional flow but in the Meteor workflow. Flux was developed to aid stateful UI development, de-coupling the logic from the view.
+
+
+Flux has has 4 steps in its model
+  - Action - responds to events, and set off the process for changing the state of a UI component
+  - Dispatcher - handles Actions, identifying which single logic is delegated to handle the state
+  - Store - holds the single programming logic to manage the state of componets
+  - View - relatively watches the state and renders any changes as they occur
+
+This demo was created to show how Flux can work in Meteor with Blaze and to provide an example of a declarative approach to stateful UI engineering.
+    {{/markdown}}
+</template>

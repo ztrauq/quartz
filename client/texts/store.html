@@ -1,0 +1,78 @@
+<template name="storeContent">
+
+    <div class="ui segment basic">
+        {{> storeText}}
+    </div>
+</template>
+
+<template name="storeText">
+    {{#markdown}}
+
+The store is created in the template.onCreated callback.
+
+```js
+/* STORE */
+    Template.circuit.onCreated( function( ){
+
+
+        /* The store registers itself with the
+            Dispatcher, declaring a function with the Action type
+            */
+
+        // Do stuff when actions happen
+        Dispatcher.register(function(payload) {
+            switch (payload.actionType) {
+                case CIRCUIT_TOGGLE:
+                    STORES[STORE].circuitToggle();
+                    break;
+        }
+        });
+
+        /* the possible states for this component are declared
+            */
+
+        let states = [
+            {aim: 'light on', closed: true, currentState: false},
+            {aim: 'light off', closed: false, currentState: true},
+        ];
+
+        /* and the states are put into a reactive-dict
+            */
+
+        AppState.set(STORE,states);
+
+
+        /* We declare the Store's function, putting them in a global
+            to make them available to the wider app
+            */
+
+        // The Store's functions
+
+        STORES[STORE] = {
+            // a function to toggle the currentState or the circuit
+            circuitToggle : function(){
+
+                // get the states from the AppState for this store
+                let states = AppState.get(STORE);
+
+                // iterate and toggle the boolean value
+                _.each(states, function(state){
+                    state.currentState = !state.currentState;
+                });
+
+                // put the changed state back in the reactive-dict
+                AppState.set(STORE,states);
+
+            },
+            // a reactive function that returns the currentState to a view
+            getState : function (){
+                let states = AppState.get(STORE);
+                return _.findWhere(states, {currentState: true})
+            }
+        }
+
+    });
+```
+
+    {{/markdown}}
+</template>

@@ -1,0 +1,14 @@
+<template name="accordion">
+    <div class="ui styled fluid accordion">
+        {{#each state}}
+            <div class="{{#if active}}active{{/if}} title" name="{{name}}">
+                <i class="dropdown icon" name="{{name}}"></i>
+                {{name}}
+            </div>
+            <div class="{{#if active}}active{{/if}} content">
+                {{> Template.dynamic template=template}}
+            </div>
+        {{/each}}
+
+    </div>
+</template>
